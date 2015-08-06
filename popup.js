@@ -69,7 +69,7 @@ function getImageUrl(searchTerm, callback, errorCallback) {
     
     if (!response || !response.responseData || !response.responseData.results ||
         response.responseData.results.length === 0) {
-      errorCallback('No response from Google Image search for "' + searchTerm + '"!');
+      errorCallback('No response from Google Image search!');
       return;
     }
     var firstResult = response.responseData.results[0];
