@@ -3,7 +3,7 @@
 
 	"name" : "Sample Chrome Extension 1",
 	"description" : "This extension shows a Google Image search result for the current webpage",
-	"version" : 1,
+	"version" : "1.0",
 
 	"browser_action" : {
 		"default_icon" : "icon.png",
