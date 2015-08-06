@@ -66,6 +66,7 @@ function getImageUrl(searchTerm, callback, errorCallback) {
   x.onload = function() {
     // Parse and process the response from Google Image Search.
     var response = x.response;
+    
     if (!response || !response.responseData || !response.responseData.results ||
         response.responseData.results.length === 0) {
       errorCallback('No response from Google Image search!');
