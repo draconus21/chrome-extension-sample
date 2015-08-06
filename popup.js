@@ -66,9 +66,16 @@ function getImageUrl(searchTerm, callback, errorCallback) {
   x.onload = function() {
     // Parse and process the response from Google Image Search.
     var response = x.response;
+    
+    chrome.tabs.query({active:true, currentWindow:true}, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function() {
+        console.log("test");
+      });
+    });
+    
     if (!response || !response.responseData || !response.responseData.results ||
         response.responseData.results.length === 0) {
-      errorCallback('No response from Google Image search!');
+      errorCallback('No response from Google Image search for "' + searchTerm + '"!');
       return;
     }
     var firstResult = response.responseData.results[0];
